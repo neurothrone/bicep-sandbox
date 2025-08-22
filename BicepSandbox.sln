@@ -7,6 +7,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-resource-group", "01-resource-group", "{D51A9D6F-526A-4783-AA98-9F9382629AA1}"
 	ProjectSection(SolutionItems) = preProject
 		infra\exercises\01-resource-group\commands.md = infra\exercises\01-resource-group\commands.md
+		infra\exercises\01-resource-group\resource-group.bicep = infra\exercises\01-resource-group\resource-group.bicep
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-storage", "02-storage", "{7CA25A8B-F858-406F-9403-F988021A4F75}"
+	ProjectSection(SolutionItems) = preProject
+		infra\exercises\02-storage\commands.md = infra\exercises\02-storage\commands.md
+		infra\exercises\02-storage\storage.bicep = infra\exercises\02-storage\storage.bicep
 	EndProjectSection
 EndProject
 Global
@@ -17,5 +24,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{595D3C2C-DEAD-44A9-8DD7-FF085084FBE0} = {4E0F9A2A-D21C-4AC6-B22D-9847E0D2098C}
 		{D51A9D6F-526A-4783-AA98-9F9382629AA1} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
+		{7CA25A8B-F858-406F-9403-F988021A4F75} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
 	EndGlobalSection
 EndGlobal
