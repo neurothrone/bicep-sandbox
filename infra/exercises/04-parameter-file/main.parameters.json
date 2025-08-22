@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "resourceGroupName": {
+      "value": "rg-exercise-03"
+    },
+    "location": {
+      "value": "swedencentral"
+    },
+    "storageName": {
+      "value": "exercise3storage"
+    },
+    "storageSku": {
+      "value": "Standard_LRS"
+    },
+    "storageKind": {
+      "value": "StorageV2"
+    },
+    "appServicePlanName": {
+      "value": "exercise3-app-plan"
+    },
+    "appServicePlanSku": {
+      "value": "F1"
+    },
+    "appServiceSiteName": {
+      "value": "exercise3-app-service"
+    }
+  }
+}

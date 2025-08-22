@@ -29,6 +29,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{145F
 		infra\exercises\03-modules\modules\storage.bicep = infra\exercises\03-modules\modules\storage.bicep
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-parameter-file", "04-parameter-file", "{A9249EF4-EC7A-4770-9A5B-A9DB65AB46E6}"
+	ProjectSection(SolutionItems) = preProject
+		infra\exercises\04-parameter-file\main.parameters.json = infra\exercises\04-parameter-file\main.parameters.json
+		infra\exercises\04-parameter-file\commands.md = infra\exercises\04-parameter-file\commands.md
+		infra\exercises\04-parameter-file\main.bicep = infra\exercises\04-parameter-file\main.bicep
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{E4671518-674A-4A52-BE7A-E1899A0EABD9}"
+	ProjectSection(SolutionItems) = preProject
+		infra\exercises\04-parameter-file\modules\app-service.bicep = infra\exercises\04-parameter-file\modules\app-service.bicep
+		infra\exercises\04-parameter-file\modules\resource-group.bicep = infra\exercises\04-parameter-file\modules\resource-group.bicep
+		infra\exercises\04-parameter-file\modules\storage.bicep = infra\exercises\04-parameter-file\modules\storage.bicep
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,5 +54,7 @@ Global
 		{7CA25A8B-F858-406F-9403-F988021A4F75} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
 		{9364D0F8-40E8-4E8D-8DE2-053BD7AC8178} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
 		{145F10F9-64C0-42D3-8A63-4034F2E2EF7C} = {9364D0F8-40E8-4E8D-8DE2-053BD7AC8178}
+		{A9249EF4-EC7A-4770-9A5B-A9DB65AB46E6} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
+		{E4671518-674A-4A52-BE7A-E1899A0EABD9} = {A9249EF4-EC7A-4770-9A5B-A9DB65AB46E6}
 	EndGlobalSection
 EndGlobal
