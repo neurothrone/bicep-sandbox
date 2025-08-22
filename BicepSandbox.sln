@@ -49,6 +49,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-conditionals", "05-condi
 		infra\exercises\05-conditionals\storage.bicep = infra\exercises\05-conditionals\storage.bicep
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06-loops", "06-loops", "{0FB50E47-1BD0-4266-B0EF-87A7D0C6C619}"
+	ProjectSection(SolutionItems) = preProject
+		infra\exercises\06-loops\commands.md = infra\exercises\06-loops\commands.md
+		infra\exercises\06-loops\main.bicep = infra\exercises\06-loops\main.bicep
+		infra\exercises\06-loops\main.parameters.json = infra\exercises\06-loops\main.parameters.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{D3E54D1A-4997-4F12-B5A2-3D29B28FA087}"
+	ProjectSection(SolutionItems) = preProject
+		infra\exercises\06-loops\modules\resource-group.bicep = infra\exercises\06-loops\modules\resource-group.bicep
+		infra\exercises\06-loops\modules\storage.bicep = infra\exercises\06-loops\modules\storage.bicep
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,5 +76,7 @@ Global
 		{A9249EF4-EC7A-4770-9A5B-A9DB65AB46E6} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
 		{E4671518-674A-4A52-BE7A-E1899A0EABD9} = {A9249EF4-EC7A-4770-9A5B-A9DB65AB46E6}
 		{F689684F-1E90-4195-9EA9-0232A10AA409} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
+		{0FB50E47-1BD0-4266-B0EF-87A7D0C6C619} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
+		{D3E54D1A-4997-4F12-B5A2-3D29B28FA087} = {0FB50E47-1BD0-4266-B0EF-87A7D0C6C619}
 	EndGlobalSection
 EndGlobal
