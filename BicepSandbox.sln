@@ -68,6 +68,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07-nested-loops", "07-neste
 		infra\exercises\07-nested-loops\main.bicep = infra\exercises\07-nested-loops\main.bicep
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{D8293573-1AD0-4A29-82E6-BE73F0D82258}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "conditionals", "conditionals", "{E7C44546-3E90-48B0-A34A-ECAF4223C177}"
+	ProjectSection(SolutionItems) = preProject
+		infra\samples\conditionals\if-sample.bicep = infra\samples\conditionals\if-sample.bicep
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,5 +92,7 @@ Global
 		{0FB50E47-1BD0-4266-B0EF-87A7D0C6C619} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
 		{D3E54D1A-4997-4F12-B5A2-3D29B28FA087} = {0FB50E47-1BD0-4266-B0EF-87A7D0C6C619}
 		{E6202F67-6185-4E9C-8198-1E27C2F2DF7A} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
+		{D8293573-1AD0-4A29-82E6-BE73F0D82258} = {4E0F9A2A-D21C-4AC6-B22D-9847E0D2098C}
+		{E7C44546-3E90-48B0-A34A-ECAF4223C177} = {D8293573-1AD0-4A29-82E6-BE73F0D82258}
 	EndGlobalSection
 EndGlobal
