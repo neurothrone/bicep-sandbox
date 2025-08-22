@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{4E0F9A2A-D21C-4AC6-B22D-9847E0D2098C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "exercises", "exercises", "{595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-resource-group", "01-resource-group", "{D51A9D6F-526A-4783-AA98-9F9382629AA1}"
+	ProjectSection(SolutionItems) = preProject
+		infra\exercises\01-resource-group\commands.md = infra\exercises\01-resource-group\commands.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{595D3C2C-DEAD-44A9-8DD7-FF085084FBE0} = {4E0F9A2A-D21C-4AC6-B22D-9847E0D2098C}
+		{D51A9D6F-526A-4783-AA98-9F9382629AA1} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
+	EndGlobalSection
+EndGlobal
