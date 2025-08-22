@@ -16,6 +16,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-storage", "02-storage", 
 		infra\exercises\02-storage\storage.bicep = infra\exercises\02-storage\storage.bicep
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-modules", "03-modules", "{9364D0F8-40E8-4E8D-8DE2-053BD7AC8178}"
+	ProjectSection(SolutionItems) = preProject
+		infra\exercises\03-modules\commands.md = infra\exercises\03-modules\commands.md
+		infra\exercises\03-modules\main.bicep = infra\exercises\03-modules\main.bicep
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{145F10F9-64C0-42D3-8A63-4034F2E2EF7C}"
+	ProjectSection(SolutionItems) = preProject
+		infra\exercises\03-modules\modules\app-service.bicep = infra\exercises\03-modules\modules\app-service.bicep
+		infra\exercises\03-modules\modules\resource-group.bicep = infra\exercises\03-modules\modules\resource-group.bicep
+		infra\exercises\03-modules\modules\storage.bicep = infra\exercises\03-modules\modules\storage.bicep
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +38,7 @@ Global
 		{595D3C2C-DEAD-44A9-8DD7-FF085084FBE0} = {4E0F9A2A-D21C-4AC6-B22D-9847E0D2098C}
 		{D51A9D6F-526A-4783-AA98-9F9382629AA1} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
 		{7CA25A8B-F858-406F-9403-F988021A4F75} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
+		{9364D0F8-40E8-4E8D-8DE2-053BD7AC8178} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
+		{145F10F9-64C0-42D3-8A63-4034F2E2EF7C} = {9364D0F8-40E8-4E8D-8DE2-053BD7AC8178}
 	EndGlobalSection
 EndGlobal
