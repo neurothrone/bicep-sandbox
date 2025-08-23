@@ -11,6 +11,8 @@ type storageKindType = 'StorageV2' | 'FileStorage' | 'BlockBlobStorage'
 type storageSettingsType = {
   @description('Deployment location (must be a valid Azure region)')
   location: string
+  @description('Environment suffix to append to the storage account name')
+  environment: environmentType
   @description('Storage account name (3-20 lowercase letters and numbers)')
   @minLength(3)
   @maxLength(20)
@@ -19,8 +21,6 @@ type storageSettingsType = {
   storageSku: storageSkuType
   @description('Storage kind, e.g. StorageV2, FileStorage, BlockBlobStorage')
   storageKind: storageKindType
-  @description('Environment suffix to append to the storage account name')
-  environment: environmentType
 }
 
 // !: --- Parameters ---
