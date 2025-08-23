@@ -75,6 +75,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "conditionals", "conditional
 		infra\samples\conditionals\if-sample.bicep = infra\samples\conditionals\if-sample.bicep
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "playground", "playground", "{164F605C-0D4D-4779-83C6-EF6F1D7697B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "types", "types", "{32259F39-E3AF-41BF-B472-C3B68A6A3081}"
+	ProjectSection(SolutionItems) = preProject
+		infra\playground\types\main.bicep = infra\playground\types\main.bicep
+		infra\playground\types\commands.md = infra\playground\types\commands.md
+		infra\playground\types\main.dev.bicepparam = infra\playground\types\main.dev.bicepparam
+		infra\playground\types\main.prod.bicepparam = infra\playground\types\main.prod.bicepparam
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{CBB15D38-EB4D-48F8-8AD0-4115024781EF}"
+	ProjectSection(SolutionItems) = preProject
+		infra\playground\types\modules\storage.bicep = infra\playground\types\modules\storage.bicep
+		infra\playground\types\modules\resource-group.bicep = infra\playground\types\modules\resource-group.bicep
+		infra\playground\types\modules\app-service.bicep = infra\playground\types\modules\app-service.bicep
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,5 +111,8 @@ Global
 		{E6202F67-6185-4E9C-8198-1E27C2F2DF7A} = {595D3C2C-DEAD-44A9-8DD7-FF085084FBE0}
 		{D8293573-1AD0-4A29-82E6-BE73F0D82258} = {4E0F9A2A-D21C-4AC6-B22D-9847E0D2098C}
 		{E7C44546-3E90-48B0-A34A-ECAF4223C177} = {D8293573-1AD0-4A29-82E6-BE73F0D82258}
+		{164F605C-0D4D-4779-83C6-EF6F1D7697B0} = {4E0F9A2A-D21C-4AC6-B22D-9847E0D2098C}
+		{32259F39-E3AF-41BF-B472-C3B68A6A3081} = {164F605C-0D4D-4779-83C6-EF6F1D7697B0}
+		{CBB15D38-EB4D-48F8-8AD0-4115024781EF} = {32259F39-E3AF-41BF-B472-C3B68A6A3081}
 	EndGlobalSection
 EndGlobal
