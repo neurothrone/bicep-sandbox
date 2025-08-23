@@ -41,6 +41,16 @@ az deployment sub create \
 # [https://aka.ms/bicep/core-diagnostics#BCP036]
 ```
 
+## Delete Resource Groups
+
+```shell
+# Delete the resource group and all resources in it
+az group delete --name <resource-group-name> --yes --no-wait
+
+# Example
+az group delete --name rg-types-dev --yes --no-wait
+```
+
 ## Links
 
 - https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli
