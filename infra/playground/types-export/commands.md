@@ -36,9 +36,9 @@ az deployment sub create \
   --confirm-with-what-if
 
 # Output:
-# .../main.dev.bicepparam(18,22) : Error BCP036: The property "appServicePlanSku" expected
-# a value of type "'B1' | 'F1' | 'S1'" but the provided value is of type "'P1v2'". 
-# [https://aka.ms/bicep/core-diagnostics#BCP036]
+# InvalidTemplate - Deployment template validation failed: 'The provided value for the template
+# parameter 'settings.storageName' is not valid. Length of the value should be less than or equal
+# to '24'. Please see https://aka.ms/arm-syntax-parameters for usage details.'.
 ```
 
 ## Links
