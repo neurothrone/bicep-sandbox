@@ -83,6 +83,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "types", "types", "{32259F39
 		infra\playground\types\commands.md = infra\playground\types\commands.md
 		infra\playground\types\main.dev.bicepparam = infra\playground\types\main.dev.bicepparam
 		infra\playground\types\main.prod.bicepparam = infra\playground\types\main.prod.bicepparam
+		infra\playground\types\main.fail.bicepparam = infra\playground\types\main.fail.bicepparam
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{CBB15D38-EB4D-48F8-8AD0-4115024781EF}"
