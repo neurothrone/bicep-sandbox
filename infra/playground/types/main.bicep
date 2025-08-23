@@ -44,20 +44,20 @@ type tagsType = {
 
 // !: --- Parameters ---
 param environment environmentType
-param settings resourceSettingsType
+param resourceSettings resourceSettingsType
 param storageSettings storageSettingsType
 param appServiceSettings appServiceSettingsType
 param tags tagsType
 
 // !: --- Variables ---
-var resourceGroupNameFull = '${settings.resourceGroupName}-${environment}'
+var resourceGroupNameFull = '${resourceSettings.resourceGroupName}-${environment}'
 
 // !: --- Modules ---
 module resourceGroupModule 'modules/resource-group.bicep' = {
   name: 'resourceGroupModule'
   params: {
-    name: '${settings.resourceGroupName}-${environment}'
-    location: settings.location
+    name: '${resourceSettings.resourceGroupName}-${environment}'
+    location: resourceSettings.location
     tags: tags
   }
 }
@@ -66,7 +66,7 @@ module storageModule 'modules/storage.bicep' = {
   name: 'storageModule'
   scope: resourceGroup(resourceGroupNameFull)
   params: {
-    location: settings.location
+    location: resourceSettings.location
     name: '${storageSettings.storageName}${environment}'
     skuName: storageSettings.storageSku
     kind: storageSettings.storageKind
@@ -79,7 +79,7 @@ module appServiceModule 'modules/app-service.bicep' = {
   name: 'appServiceModule'
   scope: resourceGroup(resourceGroupNameFull)
   params: {
-    location: settings.location
+    location: resourceSettings.location
     planName: '${appServiceSettings.appServicePlanName}-${environment}'
     skuName: environment == 'dev' ? 'F1' : appServiceSettings.appServicePlanSku
     siteName: '${appServiceSettings.appServiceSiteName}-${environment}'
