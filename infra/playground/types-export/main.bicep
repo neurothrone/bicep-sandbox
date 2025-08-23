@@ -39,16 +39,23 @@ module appServiceModule 'modules/app-service.bicep' = {
   name: 'appServiceModule'
   scope: resourceGroup(resourceGroupNameFull)
   params: {
-    // !: Approach 1: Customization
-    settings: {
-      location: resourceSettings.location
+    // !: Approach 1: Directly use the provided settings, no customization
+    //     settings: appServiceSettings
+    // !: Approach 2: Customization
+    //     settings: {
+    //       location: resourceSettings.location
+    //       appServiceSiteName: '${appServiceSettings.appServiceSiteName}-${environment}'
+    //       appServicePlanName: '${appServiceSettings.appServicePlanName}-${environment}'
+    //       appServicePlanSku: environment == 'dev' ? 'F1' : appServiceSettings.appServicePlanSku
+    //       appServiceCapacity: appServiceSettings.appServiceCapacity
+    //     }
+    // !: Approach 3: Merge with union()
+    settings: union(appServiceSettings, {
       appServiceSiteName: '${appServiceSettings.appServiceSiteName}-${environment}'
       appServicePlanName: '${appServiceSettings.appServicePlanName}-${environment}'
       appServicePlanSku: environment == 'dev' ? 'F1' : appServiceSettings.appServicePlanSku
-      appServiceCapacity: appServiceSettings.appServiceCapacity
-    }
-    // !: Approach 2: Directly use the provided settings, no customization
-    //settings: appServiceSettings
+    })
+
     tags: tags
   }
   dependsOn: [resourceGroupModule]
