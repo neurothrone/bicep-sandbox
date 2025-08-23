@@ -2,7 +2,7 @@ using 'main.bicep'
 
 param environment = 'dev'
 
-param settings = {
+param resourceSettings = {
   resourceGroupName: 'rg-types'
   location: 'swedencentral'
 }
