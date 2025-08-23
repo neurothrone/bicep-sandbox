@@ -9,7 +9,7 @@ param resourceSettings = {
 
 param storageSettings = {
   location: resourceSettings.location
-  storageName: 'typesstorage'
+  storageName: 'typesshouldfailstorage'
   storageSku: 'Standard_LRS'
   storageKind: 'StorageV2'
 }
@@ -17,7 +17,7 @@ param storageSettings = {
 param appServiceSettings = {
   location: resourceSettings.location
   appServicePlanName: 'types-app-plan'
-  appServicePlanSku: 'P1v2'
+  appServicePlanSku: 'F1'
   appServiceSiteName: 'types-app-service'
   appServiceCapacity: 1
 }
