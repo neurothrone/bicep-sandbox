@@ -2,18 +2,21 @@ using 'main.bicep'
 
 param environment = 'prod'
 
-param settings = {
+param resourceSettings = {
   resourceGroupName: 'rg-types'
   location: 'swedencentral'
 }
 
 param storageSettings = {
+  location: resourceSettings.location
+  environment: environment
   storageName: 'typesstorage'
   storageSku: 'Standard_LRS'
   storageKind: 'StorageV2'
 }
 
 param appServiceSettings = {
+  location: resourceSettings.location
   appServicePlanName: 'types-app-plan'
   appServicePlanSku: 'B1'
   appServiceSiteName: 'types-app-service'
