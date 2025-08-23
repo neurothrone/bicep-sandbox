@@ -15,6 +15,7 @@ param tags tagsType
 
 // !: --- Variables ---
 var resourceGroupNameFull = '${resourceSettings.resourceGroupName}-${environment}'
+var storageNameFull = '${storageSettings.storageName}${environment}'
 
 // !: --- Modules ---
 module resourceGroupModule 'modules/resource-group.bicep' = {
@@ -31,7 +32,9 @@ module storageModule 'modules/storage.bicep' = {
   name: 'storageModule'
   scope: resourceGroup(resourceGroupNameFull)
   params: {
-    settings: storageSettings
+    settings: union(storageSettings, {
+      storageName: storageNameFull
+    })
     tags: tags
   }
   dependsOn: [resourceGroupModule]
