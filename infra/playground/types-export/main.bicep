@@ -20,7 +20,9 @@ var resourceGroupNameFull = '${resourceSettings.resourceGroupName}-${environment
 module resourceGroupModule 'modules/resource-group.bicep' = {
   name: 'resourceGroupModule'
   params: {
-    settings: resourceSettings
+    settings: union(resourceSettings, {
+      resourceGroupName: resourceGroupNameFull
+    })
     tags: tags
   }
 }
