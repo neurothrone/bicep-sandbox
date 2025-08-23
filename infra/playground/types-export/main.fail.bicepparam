@@ -1,6 +1,6 @@
 using 'main.bicep'
 
-param environment = 'dev'
+param environment = 'test'
 
 param resourceSettings = {
   resourceGroupName: 'rg-types'
