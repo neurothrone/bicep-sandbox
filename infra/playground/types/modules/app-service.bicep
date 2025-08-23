@@ -20,6 +20,7 @@ param siteName string
 @description('Tags to apply to the resource')
 param tags object
 
+// !: --- Variables ---
 var tier = skuName == 'F1' ? 'Free' : (skuName == 'B1' ? 'Basic' : 'Standard')
 var isLinux = skuName != 'F1' // Free is not supported on Linux
 
