@@ -1,8 +1,6 @@
 targetScope = 'resourceGroup'
 
 // !: --- Types ---
-import { environmentType } from '../types.bicep'
-
 type storageSkuType = 'Standard_LRS' | 'Standard_GRS' | 'Standard_ZRS' | 'Premium_LRS'
 
 type storageKindType = 'StorageV2' | 'FileStorage' | 'BlockBlobStorage'
@@ -11,11 +9,9 @@ type storageKindType = 'StorageV2' | 'FileStorage' | 'BlockBlobStorage'
 type storageSettingsType = {
   @description('Deployment location (must be a valid Azure region)')
   location: string
-  @description('Environment suffix to append to the storage account name')
-  environment: environmentType
-  @description('Storage account name (3-20 lowercase letters and numbers)')
+  @description('Storage account name (3-24 lowercase letters and numbers)')
   @minLength(3)
-  @maxLength(20)
+  @maxLength(24)
   storageName: string
   @description('SKU name, e.g. Standard_LRS, Standard_GRS, Standard_ZRS, Premium_LRS')
   storageSku: storageSkuType
@@ -31,7 +27,7 @@ param tags object
 
 // !: --- Resources ---
 resource storage 'Microsoft.Storage/storageAccounts@2024-01-01' = {
-  name: toLower('${settings.storageName}${settings.environment}')
+  name: toLower(settings.storageName)
   location: settings.location
   sku: {
     name: settings.storageSku
