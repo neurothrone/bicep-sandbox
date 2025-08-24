@@ -7,8 +7,8 @@ type appServicePlanSkuType = 'B1' | 'F1' | 'S1'
 type appServiceSettingsType = {
   @description('Location for the App Service resources')
   location: string
-  @description('App Service (site) name')
-  appServiceSiteName: string
+  @description('App Service App name')
+  appServiceAppName: string
   @description('App Service Plan name')
   appServicePlanName: string
   @description('App Service Plan SKU name')
@@ -45,7 +45,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
 }
 
 resource webApp 'Microsoft.Web/sites@2024-11-01' = {
-  name: settings.appServiceSiteName
+  name: settings.appServiceAppName
   location: settings.location
   kind: isLinux ? 'app,linux' : 'app'
   properties: {

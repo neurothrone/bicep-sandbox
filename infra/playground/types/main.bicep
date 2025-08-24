@@ -25,12 +25,12 @@ type storageSettingsType = {
 
 type appServicePlanSkuType = 'B1' | 'F1' | 'S1'
 type appServiceSettingsType = {
+  @description('App Service App name')
+  appServiceAppName: string
   @description('App Service Plan name')
   appServicePlanName: string
   @description('App Service Plan SKU name')
   appServicePlanSku: appServicePlanSkuType
-  @description('App Service (site) name')
-  appServiceSiteName: string
   @description('App Service Plan capacity (instances)')
   appServiceCapacity: int
 }
@@ -81,9 +81,9 @@ module appServiceModule 'modules/app-service.bicep' = {
   scope: resourceGroup(resourceGroupNameFull)
   params: {
     location: resourceSettings.location
-    planName: '${appServiceSettings.appServicePlanName}-${environment}'
+    appServiceAppName: '${appServiceSettings.appServiceAppName}-${environment}'
+    appServicePlanName: '${appServiceSettings.appServicePlanName}-${environment}'
     skuName: environment == 'dev' ? 'F1' : appServiceSettings.appServicePlanSku
-    siteName: '${appServiceSettings.appServiceSiteName}-${environment}'
     capacity: appServiceSettings.appServiceCapacity
     tags: tags
   }

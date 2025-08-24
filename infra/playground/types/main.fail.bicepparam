@@ -13,9 +13,9 @@ param storageSettings = {
 }
 
 param appServiceSettings = {
+  appServiceAppName: 'types-app-service'
   appServicePlanName: 'types-app-plan'
   appServicePlanSku: 'P1v2'
-  appServiceSiteName: 'types-app-service'
   appServiceCapacity: 1
 }
 

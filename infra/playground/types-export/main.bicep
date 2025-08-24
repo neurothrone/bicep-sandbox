@@ -56,7 +56,7 @@ module appServiceModule 'modules/app-service.bicep' = {
     //     }
     // !: Approach 3: Merge with union()
     settings: union(appServiceSettings, {
-      appServiceSiteName: '${appServiceSettings.appServiceSiteName}-${environment}'
+      appServiceSiteName: '${appServiceSettings.appServiceAppName}-${environment}'
       appServicePlanName: '${appServiceSettings.appServicePlanName}-${environment}'
       appServicePlanSku: environment == 'dev' ? 'F1' : appServiceSettings.appServicePlanSku
     })

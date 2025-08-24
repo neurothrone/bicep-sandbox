@@ -4,8 +4,11 @@ targetScope = 'resourceGroup'
 @description('Location for the App Service resources')
 param location string
 
+@description('App Service App name')
+param appServiceAppName string
+
 @description('App Service Plan name')
-param planName string
+param appServicePlanName string
 
 @description('App Service Plan SKU name')
 @allowed(['F1', 'B1', 'S1'])
@@ -13,9 +16,6 @@ param skuName string
 
 @description('App Service Plan capacity (instances)')
 param capacity int
-
-@description('App Service (Web App) name')
-param siteName string
 
 @description('Tags to apply to the resource')
 param tags object
@@ -26,7 +26,7 @@ var isLinux = skuName != 'F1' // Free is not supported on Linux
 
 // !: --- Resources ---
 resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
-  name: planName
+  name: appServicePlanName
   location: location
   sku: {
     name: skuName
@@ -41,8 +41,8 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
   tags: tags
 }
 
-resource webApp 'Microsoft.Web/sites@2024-11-01' = {
-  name: siteName
+resource appServiceApp 'Microsoft.Web/sites@2024-11-01' = {
+  name: appServiceAppName
   location: location
   properties: {
     serverFarmId: appServicePlan.id
@@ -56,6 +56,6 @@ resource webApp 'Microsoft.Web/sites@2024-11-01' = {
 
 // !: --- Outputs ---
 output appServicePlanIdOutput string = appServicePlan.id
-output appServiceSiteIdOutput string = webApp.id
-output defaultHostNameOutput string = webApp.properties.defaultHostName
-output webAppUrlOutput string = 'https://${webApp.properties.defaultHostName}'
+output appServiceSiteIdOutput string = appServiceApp.id
+output defaultHostNameOutput string = appServiceApp.properties.defaultHostName
+output webAppUrlOutput string = 'https://${appServiceApp.properties.defaultHostName}'

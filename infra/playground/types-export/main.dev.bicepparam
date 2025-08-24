@@ -15,9 +15,9 @@ param storageSettings = {
 
 param appServiceSettings = {
   location: resourceSettings.location
+  appServiceAppName: 'types-app-service'
   appServicePlanName: 'types-app-plan'
   appServicePlanSku: 'F1'
-  appServiceSiteName: 'types-app-service'
   appServiceCapacity: 1
 }
 
