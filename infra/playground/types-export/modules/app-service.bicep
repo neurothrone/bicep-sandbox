@@ -14,6 +14,8 @@ type appServiceSettingsType = {
   @description('App Service Plan SKU name')
   appServicePlanSku: appServicePlanSkuType
   @description('App Service Plan capacity (instances)')
+  @minValue(1)
+  @maxValue(10)
   appServiceCapacity: int
   @description('Enforce HTTPS for the App Service')
   appServiceHttpsOnly: bool
