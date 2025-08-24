@@ -15,7 +15,7 @@ param tags tagsType
 
 // !: --- Variables ---
 var resourceGroupNameFull = '${resourceSettings.resourceGroupName}-${environment}'
-var storageNameFull = '${storageSettings.storageName}${environment}'
+var storageNameFull = 'storage${uniqueString(subscription().id)}${environment}'
 
 // !: --- Modules ---
 module resourceGroupModule 'modules/resource-group.bicep' = {

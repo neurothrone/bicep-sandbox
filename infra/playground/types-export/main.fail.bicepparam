@@ -9,7 +9,6 @@ param resourceSettings = {
 
 param storageSettings = {
   location: resourceSettings.location
-  storageName: 'typesshouldfailstorage'
   storageSku: 'Standard_LRS'
   storageKind: 'StorageV2'
 }

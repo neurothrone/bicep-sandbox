@@ -8,7 +8,6 @@ param resourceSettings = {
 }
 
 param storageSettings = {
-  storageName: 'typesstorage'
   storageSku: 'Standard_LRS'
   storageKind: 'StorageV2'
 }
