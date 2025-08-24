@@ -13,10 +13,6 @@ type resourceSettingsType = {
 type storageSkuType = 'Standard_LRS' | 'Standard_GRS' | 'Standard_ZRS' | 'Premium_LRS'
 type storageKindType = 'StorageV2' | 'FileStorage' | 'BlockBlobStorage'
 type storageSettingsType = {
-  @description('Storage account name (3-24 lowercase letters and numbers)')
-  @minLength(3)
-  @maxLength(24)
-  storageName: string
   @description('Storage SKU')
   storageSku: storageSkuType
   @description('Storage kind')
