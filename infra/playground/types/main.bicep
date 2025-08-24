@@ -33,6 +33,8 @@ type appServiceSettingsType = {
   appServicePlanSku: appServicePlanSkuType
   @description('App Service Plan capacity (instances)')
   appServiceCapacity: int
+  @description('Enforce HTTPS for the App Service')
+  appServiceHttpsOnly: bool
 }
 
 type tagsType = {
@@ -85,6 +87,7 @@ module appServiceModule 'modules/app-service.bicep' = {
     appServicePlanName: '${appServiceSettings.appServicePlanName}-${environment}'
     skuName: environment == 'dev' ? 'F1' : appServiceSettings.appServicePlanSku
     capacity: appServiceSettings.appServiceCapacity
+    appServiceHttpsOnly: appServiceSettings.appServiceHttpsOnly
     tags: tags
   }
   dependsOn: [resourceGroupModule]

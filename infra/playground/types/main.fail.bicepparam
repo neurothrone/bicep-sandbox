@@ -17,6 +17,7 @@ param appServiceSettings = {
   appServicePlanName: 'types-app-plan'
   appServicePlanSku: 'P1v2'
   appServiceCapacity: 1
+  appServiceHttpsOnly: true
 }
 
 param tags = {

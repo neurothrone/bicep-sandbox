@@ -17,6 +17,9 @@ param skuName string
 @description('App Service Plan capacity (instances)')
 param capacity int
 
+@description('Enforce HTTPS for the App Service')
+param appServiceHttpsOnly bool
+
 @description('Tags to apply to the resource')
 param tags object
 
@@ -46,7 +49,7 @@ resource appServiceApp 'Microsoft.Web/sites@2024-11-01' = {
   location: location
   properties: {
     serverFarmId: appServicePlan.id
-    httpsOnly: true
+    httpsOnly: appServiceHttpsOnly
     siteConfig: {
       ftpsState: 'Disabled'
     }
@@ -58,4 +61,4 @@ resource appServiceApp 'Microsoft.Web/sites@2024-11-01' = {
 output appServicePlanIdOutput string = appServicePlan.id
 output appServiceSiteIdOutput string = appServiceApp.id
 output defaultHostNameOutput string = appServiceApp.properties.defaultHostName
-output webAppUrlOutput string = 'https://${appServiceApp.properties.defaultHostName}'
+output webAppUrlOutput string = '${appServiceHttpsOnly ? 'https' : 'http'}://${appServiceApp.properties.defaultHostName}'

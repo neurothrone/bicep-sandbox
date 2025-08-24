@@ -15,6 +15,8 @@ type appServiceSettingsType = {
   appServicePlanSku: appServicePlanSkuType
   @description('App Service Plan capacity (instances)')
   appServiceCapacity: int
+  @description('Enforce HTTPS for the App Service')
+  appServiceHttpsOnly: bool
 }
 
 // !: --- Parameters ---
@@ -44,13 +46,13 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
   tags: tags
 }
 
-resource webApp 'Microsoft.Web/sites@2024-11-01' = {
+resource appServiceApp 'Microsoft.Web/sites@2024-11-01' = {
   name: settings.appServiceAppName
   location: settings.location
   kind: isLinux ? 'app,linux' : 'app'
   properties: {
     serverFarmId: appServicePlan.id
-    httpsOnly: true
+    httpsOnly: settings.appServiceHttpsOnly
     siteConfig: {
       ftpsState: 'Disabled'
     }
@@ -60,6 +62,6 @@ resource webApp 'Microsoft.Web/sites@2024-11-01' = {
 
 // !: --- Outputs ---
 output appServicePlanIdOutput string = appServicePlan.id
-output appServiceSiteIdOutput string = webApp.id
-output defaultHostNameOutput string = webApp.properties.defaultHostName
-output webAppUrlOutput string = 'https://${webApp.properties.defaultHostName}'
+output appServiceSiteIdOutput string = appServiceApp.id
+output defaultHostNameOutput string = appServiceApp.properties.defaultHostName
+output webAppUrlOutput string = '${settings.appServiceHttpsOnly ? 'https' : 'http'}://${appServiceApp.properties.defaultHostName}'
