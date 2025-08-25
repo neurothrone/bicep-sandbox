@@ -9,10 +9,6 @@ type storageKindType = 'StorageV2' | 'FileStorage' | 'BlockBlobStorage'
 type storageSettingsType = {
   @description('Deployment location (must be a valid Azure region)')
   location: string
-  @description('Storage account name (3-24 lowercase letters and numbers)')
-  @minLength(3)
-  @maxLength(24)
-  storageName: string
   @description('SKU name, e.g. Standard_LRS, Standard_GRS, Standard_ZRS, Premium_LRS')
   storageSku: storageSkuType
   @description('Storage kind, e.g. StorageV2, FileStorage, BlockBlobStorage')
@@ -20,6 +16,11 @@ type storageSettingsType = {
 }
 
 // !: --- Parameters ---
+@description('Storage account name (3-24 lowercase letters and numbers)')
+@minLength(3)
+@maxLength(24)
+param storageName string
+
 param settings storageSettingsType
 
 @description('Tags to apply to the resource')
@@ -27,7 +28,7 @@ param tags object
 
 // !: --- Resources ---
 resource storage 'Microsoft.Storage/storageAccounts@2024-01-01' = {
-  name: toLower(settings.storageName)
+  name: toLower(storageName)
   location: settings.location
   sku: {
     name: settings.storageSku

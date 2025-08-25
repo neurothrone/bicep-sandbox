@@ -32,9 +32,8 @@ module storageModule 'modules/storage.bicep' = {
   name: 'storageModule'
   scope: resourceGroup(resourceGroupNameFull)
   params: {
-    settings: union(storageSettings, {
-      storageName: storageNameFull
-    })
+    storageName: storageNameFull
+    settings: storageSettings
     tags: tags
   }
   dependsOn: [resourceGroupModule]
