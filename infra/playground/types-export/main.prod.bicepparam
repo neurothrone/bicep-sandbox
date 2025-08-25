@@ -17,7 +17,7 @@ param appServiceSettings = {
   location: resourceSettings.location
   appServiceAppName: 'app-service-types'
   appServicePlanName: 'app-plan-types'
-  appServicePlanSku: 'B1'
+  appServicePlanSkuName: 'B1'
   appServicePlanInstanceCount: 1
   appServiceHttpsOnly: true
 }

@@ -1,7 +1,7 @@
 targetScope = 'resourceGroup'
 
 // !: --- Types ---
-type appServicePlanSkuType = 'B1' | 'F1' | 'S1'
+type appServicePlanSkuNameType = 'B1' | 'F1' | 'S1'
 
 @export()
 type appServiceSettingsType = {
@@ -12,7 +12,7 @@ type appServiceSettingsType = {
   @description('App Service Plan name')
   appServicePlanName: string
   @description('App Service Plan SKU name')
-  appServicePlanSku: appServicePlanSkuType
+  appServicePlanSkuName: appServicePlanSkuNameType
   @description('App Service Plan capacity (instances)')
   @minValue(1)
   @maxValue(10)
@@ -28,22 +28,22 @@ param settings appServiceSettingsType
 param tags object
 
 // !: --- Variables ---
-// var appServicePlanSkuTier = settings.appServicePlanSku == 'F1'
+// var appServicePlanSkuTier = settings.appServicePlanSkuName == 'F1'
 //   ? 'Free'
-//   : (settings.appServicePlanSku == 'B1' ? 'Basic' : 'Standard')
+//   : (settings.appServicePlanSkuName == 'B1' ? 'Basic' : 'Standard')
 var appServicePlanSkuTier = {
   F1: 'Free'
   B1: 'Basic'
   S1: 'Standard'
-}[settings.appServicePlanSku]
-var isLinux = settings.appServicePlanSku != 'F1' // Free is not supported on Linux
+}[settings.appServicePlanSkuName]
+var isLinux = settings.appServicePlanSkuName != 'F1' // Free is not supported on Linux
 
 // !: --- Resources ---
 resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
   name: settings.appServicePlanName
   location: settings.location
   sku: {
-    name: settings.appServicePlanSku
+    name: settings.appServicePlanSkuName
     tier: appServicePlanSkuTier
     capacity: settings.appServicePlanInstanceCount
   }
