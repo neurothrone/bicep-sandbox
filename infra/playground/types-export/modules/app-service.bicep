@@ -28,7 +28,14 @@ param settings appServiceSettingsType
 param tags object
 
 // !: --- Variables ---
-var tier = settings.appServicePlanSku == 'F1' ? 'Free' : (settings.appServicePlanSku == 'B1' ? 'Basic' : 'Standard')
+// var appServicePlanSkuTier = settings.appServicePlanSku == 'F1'
+//   ? 'Free'
+//   : (settings.appServicePlanSku == 'B1' ? 'Basic' : 'Standard')
+var appServicePlanSkuTier = {
+  F1: 'Free'
+  B1: 'Basic'
+  S1: 'Standard'
+}[settings.appServicePlanSku]
 var isLinux = settings.appServicePlanSku != 'F1' // Free is not supported on Linux
 
 // !: --- Resources ---
@@ -37,7 +44,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
   location: settings.location
   sku: {
     name: settings.appServicePlanSku
-    tier: tier
+    tier: appServicePlanSkuTier
     capacity: settings.appServicePlanInstanceCount
   }
   properties: {
