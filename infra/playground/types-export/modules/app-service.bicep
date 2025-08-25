@@ -17,8 +17,8 @@ type appServiceSettingsType = {
   @minValue(1)
   @maxValue(10)
   appServicePlanInstanceCount: int
-  @description('Deploy the App Service on Linux OS')
-  appServiceUseLinuxOs: bool
+  @description('Deploy the App Service as Linux')
+  appServiceIsLinux: bool
   @description('Enforce HTTPS for the App Service')
   appServiceHttpsOnly: bool
 }
@@ -46,7 +46,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
     capacity: settings.appServicePlanInstanceCount
   }
   properties: {
-    reserved: settings.appServiceUseLinuxOs
+    reserved: settings.appServiceIsLinux
     perSiteScaling: false
     maximumElasticWorkerCount: 1
   }
@@ -56,7 +56,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
 resource appServiceApp 'Microsoft.Web/sites@2024-11-01' = {
   name: settings.appServiceAppName
   location: settings.location
-  kind: settings.appServiceUseLinuxOs ? 'app,linux' : 'app'
+  kind: settings.appServiceIsLinux ? 'app,linux' : 'app'
   properties: {
     serverFarmId: appServicePlan.id
     httpsOnly: settings.appServiceHttpsOnly
