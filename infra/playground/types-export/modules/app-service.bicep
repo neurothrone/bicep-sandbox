@@ -16,7 +16,7 @@ type appServiceSettingsType = {
   @description('App Service Plan capacity (instances)')
   @minValue(1)
   @maxValue(10)
-  appServiceCapacity: int
+  appServicePlanInstanceCount: int
   @description('Enforce HTTPS for the App Service')
   appServiceHttpsOnly: bool
 }
@@ -38,7 +38,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
   sku: {
     name: settings.appServicePlanSku
     tier: tier
-    capacity: settings.appServiceCapacity
+    capacity: settings.appServicePlanInstanceCount
   }
   properties: {
     reserved: isLinux // Linux for non-Free, Windows for Free

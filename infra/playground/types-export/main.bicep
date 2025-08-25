@@ -52,7 +52,7 @@ module appServiceModule 'modules/app-service.bicep' = {
     //       appServiceSiteName: '${appServiceSettings.appServiceSiteName}-${environment}'
     //       appServicePlanName: '${appServiceSettings.appServicePlanName}-${environment}'
     //       appServicePlanSku: environment == 'dev' ? 'F1' : appServiceSettings.appServicePlanSku
-    //       appServiceCapacity: appServiceSettings.appServiceCapacity
+    //       appServicePlanInstanceCount: appServiceSettings.appServicePlanInstanceCount
     //     }
     // !: Approach 3: Merge with union()
     settings: union(appServiceSettings, {

@@ -18,7 +18,7 @@ param appServiceSettings = {
   appServiceAppName: 'types-app-service'
   appServicePlanName: 'types-app-plan'
   appServicePlanSku: 'B1'
-  appServiceCapacity: 1
+  appServicePlanInstanceCount: 1
   appServiceHttpsOnly: true
 }
 
