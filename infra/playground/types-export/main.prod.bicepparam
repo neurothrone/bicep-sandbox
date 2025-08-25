@@ -19,6 +19,7 @@ param appServiceSettings = {
   appServicePlanName: 'app-plan-types'
   appServicePlanSkuName: 'B1'
   appServicePlanInstanceCount: 1
+  appServiceUseLinuxOs: true
   appServiceHttpsOnly: true
 }
 

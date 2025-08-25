@@ -17,6 +17,8 @@ type appServiceSettingsType = {
   @minValue(1)
   @maxValue(10)
   appServicePlanInstanceCount: int
+  @description('Deploy the App Service on Linux OS')
+  appServiceUseLinuxOs: bool
   @description('Enforce HTTPS for the App Service')
   appServiceHttpsOnly: bool
 }
@@ -28,15 +30,11 @@ param settings appServiceSettingsType
 param tags object
 
 // !: --- Variables ---
-// var appServicePlanSkuTier = settings.appServicePlanSkuName == 'F1'
-//   ? 'Free'
-//   : (settings.appServicePlanSkuName == 'B1' ? 'Basic' : 'Standard')
 var appServicePlanSkuTier = {
   F1: 'Free'
   B1: 'Basic'
   S1: 'Standard'
 }[settings.appServicePlanSkuName]
-var isLinux = settings.appServicePlanSkuName != 'F1' // Free is not supported on Linux
 
 // !: --- Resources ---
 resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
@@ -48,7 +46,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
     capacity: settings.appServicePlanInstanceCount
   }
   properties: {
-    reserved: isLinux // Linux for non-Free, Windows for Free
+    reserved: settings.appServiceUseLinuxOs
     perSiteScaling: false
     maximumElasticWorkerCount: 1
   }
@@ -58,7 +56,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
 resource appServiceApp 'Microsoft.Web/sites@2024-11-01' = {
   name: settings.appServiceAppName
   location: settings.location
-  kind: isLinux ? 'app,linux' : 'app'
+  kind: settings.appServiceUseLinuxOs ? 'app,linux' : 'app'
   properties: {
     serverFarmId: appServicePlan.id
     httpsOnly: settings.appServiceHttpsOnly
