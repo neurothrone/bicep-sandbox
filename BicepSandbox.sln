@@ -110,6 +110,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{F7BA
 		infra\playground\types-export\modules\storage.bicep = infra\playground\types-export\modules\storage.bicep
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "key-vault", "key-vault", "{BC38BDCC-4A98-4593-A448-6BECD9A8027B}"
+	ProjectSection(SolutionItems) = preProject
+		infra\playground\key-vault\main.bicep = infra\playground\key-vault\main.bicep
+		infra\playground\key-vault\main.parameters.dev.json = infra\playground\key-vault\main.parameters.dev.json
+		infra\playground\key-vault\commands.md = infra\playground\key-vault\commands.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -134,5 +141,6 @@ Global
 		{CBB15D38-EB4D-48F8-8AD0-4115024781EF} = {32259F39-E3AF-41BF-B472-C3B68A6A3081}
 		{3BF90EA5-0A75-48A5-AAA9-E930AA1939E9} = {164F605C-0D4D-4779-83C6-EF6F1D7697B0}
 		{F7BA5AB5-BB38-4B72-8CB5-42E44AE43891} = {3BF90EA5-0A75-48A5-AAA9-E930AA1939E9}
+		{BC38BDCC-4A98-4593-A448-6BECD9A8027B} = {164F605C-0D4D-4779-83C6-EF6F1D7697B0}
 	EndGlobalSection
 EndGlobal
