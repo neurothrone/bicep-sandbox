@@ -1,0 +1,10 @@
+{
+  "moduleAliases": {
+    "ts": {},
+    "br": {
+      "neurothrone": {
+        "registry": "neurothrone.azurecr.io"
+      }
+    }
+  }
+}
