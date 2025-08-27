@@ -117,6 +117,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "key-vault", "key-vault", "{
 		infra\playground\key-vault\commands.md = infra\playground\key-vault\commands.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{601BD528-ADFD-4F95-BFC8-1658FF447DED}"
+	ProjectSection(SolutionItems) = preProject
+		infra\samples\misc\timestamp.bicep = infra\samples\misc\timestamp.bicep
+		infra\samples\misc\bicepconfig.json = infra\samples\misc\bicepconfig.json
+		infra\samples\misc\commands.md = infra\samples\misc\commands.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -142,5 +149,6 @@ Global
 		{3BF90EA5-0A75-48A5-AAA9-E930AA1939E9} = {164F605C-0D4D-4779-83C6-EF6F1D7697B0}
 		{F7BA5AB5-BB38-4B72-8CB5-42E44AE43891} = {3BF90EA5-0A75-48A5-AAA9-E930AA1939E9}
 		{BC38BDCC-4A98-4593-A448-6BECD9A8027B} = {164F605C-0D4D-4779-83C6-EF6F1D7697B0}
+		{601BD528-ADFD-4F95-BFC8-1658FF447DED} = {D8293573-1AD0-4A29-82E6-BE73F0D82258}
 	EndGlobalSection
 EndGlobal
