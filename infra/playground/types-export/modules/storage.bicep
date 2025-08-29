@@ -9,8 +9,10 @@ type storageKindType = 'StorageV2' | 'FileStorage' | 'BlockBlobStorage'
 type storageSettingsType = {
   @description('Deployment location (must be a valid Azure region)')
   location: string
+
   @description('SKU name, e.g. Standard_LRS, Standard_GRS, Standard_ZRS, Premium_LRS')
   storageSku: storageSkuType
+
   @description('Storage kind, e.g. StorageV2, FileStorage, BlockBlobStorage')
   storageKind: storageKindType
 }

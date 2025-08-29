@@ -5,11 +5,13 @@ targetScope = 'subscription'
 type resourceSettingsType = {
   @description('Resource Group name')
   resourceGroupName: string
+
   @description('Location for the resource group')
   location: string
 }
 
 // !: --- Parameters ---
+@description('Settings for the resource group')
 param settings resourceSettingsType
 
 @description('Tags to apply to the resource')

@@ -7,18 +7,24 @@ type appServicePlanSkuNameType = 'B1' | 'F1' | 'S1'
 type appServiceSettingsType = {
   @description('Location for the App Service resources')
   location: string
+
   @description('App Service App name')
   appServiceAppName: string
+
   @description('App Service Plan name')
   appServicePlanName: string
+
   @description('App Service Plan SKU name')
   appServicePlanSkuName: appServicePlanSkuNameType
+
   @description('App Service Plan capacity (instances)')
   @minValue(1)
   @maxValue(10)
   appServicePlanInstanceCount: int
+
   @description('Deploy the App Service as Linux')
   appServiceIsLinux: bool
+
   @description('Enforce HTTPS for the App Service')
   appServiceHttpsOnly: bool
 }
