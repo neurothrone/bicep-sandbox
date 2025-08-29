@@ -1,6 +1,6 @@
 targetScope = 'subscription'
 
-// !: --- Types ---
+// !: --- Imports ---
 import { environmentType, tagsType } from 'types.bicep'
 import { resourceSettingsType } from './modules/resource-group.bicep'
 import { appServiceSettingsType } from './modules/app-service.bicep'
